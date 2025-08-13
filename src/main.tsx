@@ -4,17 +4,15 @@ import "./index.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import DashboardPage from "./Component/Dashboard/DashboardPage";
-import Tables from "./Component/tables/tables";
+import Tables from "./Component/tables/Tables";
+
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <DashboardPage />,
     children: [
-      {
-        index: true,
-        element: <div>Welcome to Dashboard Home</div>,  
-      },
+  
       {
         path: "tables",
         element: <Tables />, 

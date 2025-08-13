@@ -20,7 +20,7 @@ const Navbar = () => {
 
   <div className="navbar-end">
  
-<label className="input bg-[#0F1535] mr-2">
+<label className="input rounded-4xl w-[199px]  bg-[#0F1535] mr-2">
   <svg className="h-[1em] text-white opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <g
       strokeLinejoin="round"
@@ -33,7 +33,7 @@ const Navbar = () => {
       <path d="m21 21-4.3-4.3"></path>
     </g>
   </svg>
-  <input className="text-white rounded-4xl" type="search" required placeholder="Type here..." />
+  <input className="text-white  " type="search" required placeholder="Type here..." />
 </label>
 
        <div className="flex  items-center gap-2 ">
