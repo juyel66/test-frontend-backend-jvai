@@ -10,12 +10,15 @@ const Navbar = () => {
         <div>
             <div className="navbar">
   <div className="navbar-start">
+
+      <div className="lg:hidden"> <SidebarTrigger /></div>
+
     <div>
-        <p  className="text-[#e3dcdcc9]">Pages <span className="text-white"> / Dashboard</span></p>
-        <p className="text-xl text-white">Dashboard</p>
+        <p  className="text-[#e3dcdcc9] lg:flex md:flex hidden">Pages <span className="text-white"> / Dashboard</span></p>
+        <p className="text-xl text-white ">Dashboard</p>
     </div>
 
-  <div className="lg:hidden"> <SidebarTrigger /></div>
+
   </div>
 
   <div className="navbar-end">
@@ -37,11 +40,11 @@ const Navbar = () => {
 </label>
 
        <div className="flex  items-center gap-2 ">
-        <CgProfile className="text-xl text-white" />
-        <p className="text-xl text-white">Sign in</p>
+        <CgProfile className="text-xl lg:flex md:flex hidden text-white" />
+        <p className="lg:text-xl lg:flex md:flex hidden text-white">Sign in</p>
     </div>
-    <IoSettingsOutline className="text-xl ml-2 text-white" />
-   <MdOutlineNotifications  className="text-xl ml-2 text-white" />
+    <IoSettingsOutline className="text-xl ml-2 text-white lg:flex md:flex hidden" />
+   <MdOutlineNotifications  className="text-xl ml-2 lg:flex md:flex hidden text-white" />
 
   </div>
 </div>

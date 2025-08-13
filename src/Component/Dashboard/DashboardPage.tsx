@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import AppSidebar from "@/components/app-sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import Navbar from "../Navbar/Navbar";
+import DashboardContent from "./DashboardContent";
 
 
 const DashboardPage = () => {
@@ -16,11 +17,17 @@ const DashboardPage = () => {
         <AppSidebar />
 
        
-        <main className="flex-1 p-4">
+        <main className="flex-1 p-4 w-full">
          <div className="">
            <Navbar></Navbar>
+           
+
+           <DashboardContent></DashboardContent>
+
+
          </div>
           <Outlet /> 
+
         </main>
       </div>
     </SidebarProvider>
