@@ -1,4 +1,4 @@
-import { BarChart, Home } from "lucide-react";
+import { Home } from "lucide-react";      
 import {
   Sidebar,
   SidebarContent,
@@ -8,8 +8,9 @@ import {
 } from "./ui/sidebar";
 
 import { BarChart2, CreditCard } from "lucide-react";
-import customIcons from "@/Component/customIcons/customIcons";
+
 import CustomIcon from "@/Component/customIcons/customIcons";
+import { Link } from "react-router-dom";
 
 const menu_items = [
   {
@@ -48,7 +49,8 @@ const AppSidebar = () => {
     <Sidebar>
       <SidebarContent>
         <SidebarMenu>
-          {/* Main menu */}
+        
+        
 
               <p className="mt-5 ml-10 text-white mb-5 px-2  text-[17px]">
             VISION UI FREE
@@ -60,10 +62,10 @@ const AppSidebar = () => {
           {menu_items.map((item) => (
             <SidebarMenuItem className="" key={item.title}>
               <SidebarMenuButton>
-                <a href={item.url} className="flex items-center  gap-2">
+                <Link to={item.url} className="flex items-center  gap-2">
                   <item.icon />
                   <span>{item.title}</span>
-                </a>
+                </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
           ))}
@@ -77,10 +79,10 @@ const AppSidebar = () => {
           {account_items.map((item) => (
             <SidebarMenuItem key={item.title}>
               <SidebarMenuButton>
-                <a href={item.url} className="flex items-center gap-2">
+                <Link to={item.url} className="flex items-center gap-2">
                   <item.icon />
                   <span>{item.title}</span>
-                </a>
+                </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
           ))}

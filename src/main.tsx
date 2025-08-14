@@ -5,17 +5,21 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import DashboardPage from "./Component/Dashboard/DashboardPage";
 import Tables from "./Component/tables/Tables";
-
+import DashboardContent from "./Component/Dashboard/DashboardContent";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <DashboardPage />,
     children: [
-  
+      {
+        index: true,
+        element: <DashboardContent />,
+      },
+
       {
         path: "tables",
-        element: <Tables />, 
+        element: <Tables />,
       },
     ],
   },
@@ -23,8 +27,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-  <div className="">
+    <div className="">
       <RouterProvider router={router} />
-  </div>
+    </div>
   </StrictMode>
 );
