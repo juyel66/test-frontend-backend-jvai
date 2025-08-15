@@ -1,3 +1,4 @@
+import Charts from "./Charts";
 import DashboardCard from "./DashboardCard";
 import TodaysCard from "./TodaysCard";
 
@@ -7,6 +8,9 @@ const DashboardContent = () => {
     <TodaysCard></TodaysCard>
     <div className="mt-5">
         <DashboardCard></DashboardCard>
+    </div>
+    <div>
+      <Charts></Charts>
     </div>
 
 

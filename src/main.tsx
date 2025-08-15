@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import DashboardPage from "./Component/Dashboard/DashboardPage";
 import Tables from "./Component/tables/Tables";
 import DashboardContent from "./Component/Dashboard/DashboardContent";
+import Billing from "./Component/Billing/Billing";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,11 @@ const router = createBrowserRouter([
       {
         path: "tables",
         element: <Tables />,
+        
+      },
+      {
+        path: "/billing",
+        element: <Billing/>,
       },
     ],
   },

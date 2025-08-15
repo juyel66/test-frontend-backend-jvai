@@ -56,7 +56,7 @@ const TodaysCard = () => {
         {/* img 1 */}
             <div
         style={{ backgroundImage: "url(/images/rec.png)" }}
-        className="flex items-center justify-between  p-2 w-full rounded-xl  bg-no-repeat bg-cover "
+        className="flex items-center justify-between   p-2 w-full rounded-xl  bg-no-repeat bg-cover "
       >
         <div className=" h-[80px] ">
           <p className=" text-[#A0AEC0] lg:text-xl ">Total sales</p>
