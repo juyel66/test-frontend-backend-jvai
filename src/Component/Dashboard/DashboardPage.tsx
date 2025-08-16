@@ -4,29 +4,25 @@ import AppSidebar from "@/components/app-sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import Navbar from "../Navbar/Navbar";
 
-
 const DashboardPage = () => {
   return (
     <SidebarProvider>
       <div
-        style={{
-          backgroundImage: "url('/images/bgImage.png')",
-        }}
-        className="flex w-full"
+        className="flex w-screen min-h-screen bg-no-repeat bg-cover bg-top"
+        style={{ backgroundImage: "url('/images/bgImage.png')" }}
       >
+        {/* Sidebar */}
         <AppSidebar />
 
-        <main className="flex-1 p-4 w-full">
-          <div className="">
-            <Navbar></Navbar>
-            
+        {/* Main content */}
+        <main className="flex-1 flex flex-col min-h-screen overflow-auto p-4">
+          {/* Navbar */}
+          <Navbar />
 
-           
-
+          {/* Page content */}
+          <div className="flex-1">
+            <Outlet />
           </div>
-
-          <Outlet />
-          
         </main>
       </div>
     </SidebarProvider>

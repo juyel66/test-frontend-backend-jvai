@@ -1,5 +1,20 @@
 import type { ColumnDef } from "@tanstack/react-table";
 
+export type Payment = {
+  id: string; // number → string
+  name: string;
+  amount: number;
+  date: string;
+  STATUS: "ONLINE" | "OFFLINE";
+  avatar: string;
+  AUTHOR: string;
+  email: string;
+  FUNCTION: string;
+  EMPLOYED: string;
+   ACTION: string;
+};
+
+
 export const columns: ColumnDef<Payment>[] = [
   {
     accessorKey: "AUTHOR",

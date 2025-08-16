@@ -43,7 +43,7 @@ const Charts: React.FC = () => {
   return (
     <Card
       style={{ backgroundImage: "url(/images/bgImage.png)" }}
-      className="bg-custom-gradient bg-no-repeat bg-cover mt-5 shadow-none border-none"
+      className="bg-custom-gradient bg-no-repeat bg-cover  mt-5   shadow-none border-none"
     >
       <CardHeader>
         <CardTitle className="text-3xl text-white">Sales overview</CardTitle>
@@ -52,41 +52,41 @@ const Charts: React.FC = () => {
 
       <CardContent>
         <ChartContainer config={chartConfig}>
-          <ResponsiveContainer width="100%" height={0}>
-            <AreaChart
-              className="text-white"
-              data={chartData}
-              margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
-            >
-              <CartesianGrid vertical={false} strokeDasharray="3 3" stroke="#e0e0e0" />
-              <XAxis
-                dataKey="month"
-                tickLine={false}
-                axisLine={false}
-                tickMargin={8}
-                tickFormatter={(value) => value.slice(0, 3)}
-                stroke="#fff" // White labels for X-axis
-              />
-              <YAxis
-                tickLine={false}
-                axisLine={false}
-                tickMargin={8}
-                stroke="#fff" // White labels for Y-axis
-              />
-              <ChartTooltip
-                cursor={false}
-                content={<ChartTooltipContent indicator="line" />}
-              />
-              <Area
-                dataKey="desktop"
-                type="monotone"
-                fill="#1E40AF"
-                fillOpacity={0.6}
-                stroke="#3B82F6"
-                strokeWidth={4}
-              />
-            </AreaChart>
-          </ResponsiveContainer>
+         <ResponsiveContainer width="100%" height={0}>
+  <AreaChart
+    className="text-white"
+    data={chartData}
+    margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+  >
+    <CartesianGrid vertical={false} strokeDasharray="3 3" stroke="#e0e0e0" />
+    <XAxis
+      dataKey="month"
+      tickLine={false}
+      axisLine={false}
+      tickMargin={8}
+      tickFormatter={(value) => value.slice(0, 3)}            
+      stroke="#fff"
+    />
+    <YAxis
+      tickLine={false}
+      axisLine={false}
+      tickMargin={8}
+      stroke="#fff" 
+    />
+    <ChartTooltip
+      cursor={false}
+      content={<ChartTooltipContent indicator="line" />}
+    />
+    <Area
+      dataKey="desktop"
+      type="monotone"
+      fill="#1E40AF"
+      fillOpacity={0.6}
+      stroke="#3B82F6"
+      strokeWidth={4}
+    />
+  </AreaChart>
+</ResponsiveContainer>
         </ChartContainer>
       </CardContent>
 
