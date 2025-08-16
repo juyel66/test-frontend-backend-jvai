@@ -4,7 +4,7 @@ import "./index.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import DashboardPage from "./Component/Dashboard/DashboardPage";
-import Tables from "./Component/tables/Tables";
+import Tables from "./Component/Tables/TablesContent";
 import DashboardContent from "./Component/Dashboard/DashboardContent";
 import Billing from "./Component/Billing/Billing";
 

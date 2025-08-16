@@ -1,8 +1,6 @@
-"use client"
+import React from "react";
 
-import React from "react"
-import { TrendingUp } from "lucide-react"
-import { Area, AreaChart, CartesianGrid, XAxis, } from "recharts"
+import { Area, AreaChart, CartesianGrid, XAxis, YAxis, ResponsiveContainer } from "recharts";
 import {
   Card,
   CardContent,
@@ -10,29 +8,29 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "@/components/ui/chart"
+} from "@/components/ui/chart";
 
-export const description = "A simple area chart"
+export const description = "A simple area chart";
 
 const chartData = [
-  { month: "January", desktop: 16 },
-  { month: "February", desktop: 305 },
-  { month: "March", desktop: 237 },
-  { month: "April", desktop: 73 },
-  { month: "May", desktop: 209 },
-  { month: "June", desktop: 214 },
-  { month: "July", desktop: 115 },
-  { month: "August", desktop: 145 },
-  { month: "September", desktop: 200 },
-  { month: "October", desktop: 140 },
-  { month: "November", desktop: 170 },
-  { month: "December", desktop: 150 },
-]
+  { month: "Jan", desktop: 500 },
+  { month: "Feb", desktop: 200 },
+  { month: "Mar", desktop: 250 },
+  { month: "Apr", desktop: 350 },
+  { month: "May", desktop: 400 },
+  { month: "Jun", desktop: 450 },
+  { month: "Jul", desktop: 380 },
+  { month: "Aug", desktop: 300 },
+  { month: "Sep", desktop: 350 },
+  { month: "Oct", desktop: 280 },
+  { month: "Nov", desktop: 400 },
+  { month: "Dec", desktop: 430 },
+];
 
 const Charts: React.FC = () => {
   const chartConfig = {
@@ -40,64 +38,61 @@ const Charts: React.FC = () => {
       label: "Desktop",
       color: "var(--chart-1)",
     },
-  }
+  };
 
   return (
     <Card
-    style={{ backgroundImage: "url(/images/bgImage.png)" }}
-     className=" bg-no-repeat bg-cover mt-5 bg-transparent shadow-none border-none">
+      style={{ backgroundImage: "url(/images/bgImage.png)" }}
+      className="bg-custom-gradient bg-no-repeat bg-cover mt-5 shadow-none border-none"
+    >
       <CardHeader>
-        <CardTitle>Area Chart</CardTitle>
-        <CardDescription>
-          Showing total visitors for the last 6 months
-        </CardDescription>
+        <CardTitle className="text-3xl text-white">Sales overview</CardTitle>
+        <CardDescription className="text-2xl"><span className="text-green-600">(+5) more</span> in 2021</CardDescription>
       </CardHeader>
 
-      <CardContent className="">
+      <CardContent>
         <ChartContainer config={chartConfig}>
-          <AreaChart className=""
-            width={500} // adjust as needed or use ResponsiveContainer
-            height={250}
-            data={chartData}
-            margin={{ left: 12, right: 12 }}
-          >
-            <CartesianGrid className="" vertical={false} strokeDasharray="3 3" />
-            <XAxis className=""
-              dataKey="month"
-              tickLine={false}
-              axisLine={false}
-              tickMargin={8}
-              tickFormatter={(value) => value.slice(0, 3)}
-            />
-            <ChartTooltip 
-              cursor={false}
-              content={<ChartTooltipContent indicator="line" />}
-            />
-            <Area className=""
-              dataKey="desktop"
-              type="natural"
-              fill="var(--color-desktop)"
-              fillOpacity={0.4}
-              stroke="var(--color-desktop)"
-            />
-          </AreaChart>
+          <ResponsiveContainer width="100%" height={0}>
+            <AreaChart
+              className="text-white"
+              data={chartData}
+              margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+            >
+              <CartesianGrid vertical={false} strokeDasharray="3 3" stroke="#e0e0e0" />
+              <XAxis
+                dataKey="month"
+                tickLine={false}
+                axisLine={false}
+                tickMargin={8}
+                tickFormatter={(value) => value.slice(0, 3)}
+                stroke="#fff" // White labels for X-axis
+              />
+              <YAxis
+                tickLine={false}
+                axisLine={false}
+                tickMargin={8}
+                stroke="#fff" // White labels for Y-axis
+              />
+              <ChartTooltip
+                cursor={false}
+                content={<ChartTooltipContent indicator="line" />}
+              />
+              <Area
+                dataKey="desktop"
+                type="monotone"
+                fill="#1E40AF"
+                fillOpacity={0.6}
+                stroke="#3B82F6"
+                strokeWidth={4}
+              />
+            </AreaChart>
+          </ResponsiveContainer>
         </ChartContainer>
       </CardContent>
 
-      <CardFooter>
-        <div className="flex w-full items-start gap-2 text-sm">
-          <div className="grid gap-2">
-            <div className="flex items-center gap-2 leading-none font-medium">
-              Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-            </div>
-            <div className="text-muted-foreground flex items-center gap-2 leading-none">
-              January - June 2024
-            </div>
-          </div>
-        </div>
-      </CardFooter>
+      <CardFooter></CardFooter>
     </Card>
-  )
-}
+  );
+};
 
-export default Charts
+export default Charts;
