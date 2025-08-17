@@ -2,7 +2,7 @@ import { SidebarTrigger } from "@/components/ui/sidebar";
 import { CgProfile } from "react-icons/cg";
 import { IoSettingsOutline } from "react-icons/io5";
 import { MdOutlineNotifications } from "react-icons/md";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   // const {pathname} = useLocation();
@@ -73,9 +73,9 @@ const Navbar = () => {
 
           <div className="flex  items-center gap-2 ">
             <CgProfile className="text-xl lg:flex md:flex hidden text-white" />
-            <p className="lg:text-xl lg:flex md:flex hidden text-white">
+            <Link to="/signIn" className="lg:text-xl lg:flex md:flex hidden text-white">
               Sign in
-            </p>
+            </Link>
           </div>
           <IoSettingsOutline className="text-xl ml-2 text-white lg:flex md:flex hidden" />
           <MdOutlineNotifications className="text-xl ml-2 lg:flex md:flex hidden text-white" />
