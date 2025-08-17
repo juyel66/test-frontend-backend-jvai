@@ -262,7 +262,7 @@ function Sidebar({
   }}
   data-sidebar="sidebar"
   data-slot="sidebar-inner"
-  className="text-white flex w-full p-5  flex-col  h-[700px] relative group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm"
+  className="text-white flex w-full p-5  flex-col   relative group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm"
 >
   {/* এখানে বাকি sidebar content */}
   <div className="flex-1 overflow-auto">
@@ -273,13 +273,21 @@ function Sidebar({
   </div>
 
   {/* Documentation image নিচে রাখতে */}
-  <div className="mt-auto">
-    <img
-      src="/images/documentation.png"
-      alt="Documentation"
-      className="w-full object-contain rounded-xl"
-    />
-  </div>
+<div
+  className="mt-auto w-full bg-no-repeat h-48 rounded-xl bg-cover bg-center"
+  style={{
+    backgroundImage: "url('/images/documentation.png')",
+  }}
+>
+  <img src="/images/icons.png" alt="Documentation" className=" pl-4 pt-4 object-contain rounded-xl" />
+<div className=" pl-4 pt-4">
+    <p className="text-2xl">Need help?</p>
+  <p>Please check our docs</p>
+  <p className="btn border-0 shadow font-semibold mt-2 text-white   rounded-xl bg-gradient-to-tr from-[#060b28] via-[#0a0e23] to-[#0a0e23]">DOCUMENTATION</p>
+</div>
+
+</div>
+
    
 </div>
 
