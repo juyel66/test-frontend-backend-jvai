@@ -13,7 +13,7 @@ import TablesContent from "./Component/Tables/TablesContent";
 
 const router = createBrowserRouter([
   {
-    path: "/dashboard",
+    path: "/",
     element: <DashboardPage />,
     children: [
       {
