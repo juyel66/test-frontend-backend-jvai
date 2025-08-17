@@ -1,7 +1,7 @@
 import type { ColumnDef } from "@tanstack/react-table";
 
 export type Payment = {
-  id: string; // number → string
+  id: string;
   name: string;
   amount: number;
   date: string;
@@ -11,9 +11,8 @@ export type Payment = {
   email: string;
   FUNCTION: string;
   EMPLOYED: string;
-   ACTION: string;
+  ACTION: string;
 };
-
 
 export const columns: ColumnDef<Payment>[] = [
   {
@@ -23,17 +22,14 @@ export const columns: ColumnDef<Payment>[] = [
       <div className="flex items-center gap-3">
         {/* Author image */}
         <img
-          src={
-            row.original.avatar ||
-            "https://i.ibb.co.com/0p9gCdVQ/155250069.jpg"
-          }
+          src={row.original.avatar || "https://i.ibb.co/0p9gCdVQ/155250069.jpg"}
           alt={row.original.AUTHOR}
           className="w-10 h-10 rounded-full object-cover"
         />
         {/* Name & email */}
         <div className="flex flex-col">
-          <span className="font-medium">{row.original.AUTHOR}</span>
-          <span className="text-sm text-gray-500">{row.original.email}</span>
+          <span className="font-medium text-[#FFFFFF]">{row.original.AUTHOR}</span>
+          <span className="text-sm text-[#A0AEC0]">{row.original.email}</span>
         </div>
       </div>
     ),
@@ -69,5 +65,15 @@ export const columns: ColumnDef<Payment>[] = [
   {
     accessorKey: "ACTION",
     header: "ACTION",
+       cell: ({ row }) => (
+      <div className="flex items-center gap-3">
+        {/* Author image */}
+        <img
+          src={row.original.ACTION || "https://i.ibb.co/0p9gCdVQ/155250069.jpg"} 
+          alt="DELETE"
+          className="w-10 h-10 rounded-full object-cover"
+        />
+      </div>
+    ),
   },
 ];

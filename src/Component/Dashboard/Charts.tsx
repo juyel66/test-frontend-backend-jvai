@@ -43,7 +43,7 @@ const Charts: React.FC = () => {
   return (
     <Card
       style={{ backgroundImage: "url(/images/bgImage.png)" }}
-      className="bg-custom-gradient bg-no-repeat bg-cover  mt-5   shadow-none border-none"
+      className="bg-custom-gradient bg-no-repeat bg-cover  mt-5 h-[700px] overflow-scroll  shadow-none border-none"
     >
       <CardHeader>
         <CardTitle className="text-3xl text-white">Sales overview</CardTitle>
