@@ -29,7 +29,7 @@ export default function Billing() {
          
           <div className="lg:col-span-2">
             <PaymentMethodsCard paymentMethods={data.paymentMethods} />
-           <div className="mt-">
+           <div className="mt-5">
              <BillingInfoCard billingInfo={data.billingInfo} />
            </div>
           </div>
