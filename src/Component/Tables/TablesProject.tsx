@@ -1,6 +1,9 @@
 import React from "react"
 import { DataTable } from "./data-table"
 import { columns } from "./columns"
+import { IoMdCheckmark } from "react-icons/io";
+
+
 
 
 
@@ -216,7 +219,10 @@ const TablesProjects: React.FC = () => {
         }}
     
      className="container mx-auto h-[550px] overflow-scroll py-10 rounded-xl p-2  ">
-      <h1 className="text-xl   font-bold mb-5 text-white">Author Table</h1>
+      <h1 className="text-xl   font-bold mb-5 text-white p-2">Project</h1>
+      <div className="flex items-center gap-2 text-white ">
+        <div className="bg-green-600 rounded-full"><IoMdCheckmark /></div> <span>30 done on this month</span>
+      </div>
 
       <div className="text-white ">
         <DataTable columns={columns} data={data} />
