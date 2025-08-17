@@ -15,17 +15,17 @@ import { Link } from "react-router-dom";
 const menu_items = [
   {
     title: "Dashboard",
-    url: "/dashboard",
+    url: "/",
     icon: Home, 
   },
   {
     title: "Tables",
-    url: "/dashboard/tables",
+    url: "tables",
     icon: BarChart2,
   },
   {
     title: "Billing",
-    url: "/dashboard/billing",
+    url: "billing",
     icon: CreditCard,
   },
 ];
