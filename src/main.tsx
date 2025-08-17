@@ -9,6 +9,7 @@ import DashboardContent from "./Component/Dashboard/DashboardContent";
 import Billing from "./Component/Billing/Billing";
 import SignUp from "./Component/Auth/SignUp";
 import SignIn from "./Component/Auth/SignIn";
+import TablesContent from "./Component/Tables/TablesContent";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
       },
       {
         path: "tables", // = /dashboard/tables
-        element: <Tables />,
+        element: <TablesContent />,
       },
       {
         path: "billing", // = /dashboard/billing
