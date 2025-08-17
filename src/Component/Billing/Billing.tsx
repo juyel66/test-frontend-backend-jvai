@@ -13,30 +13,31 @@ export default function Billing() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 p-6">
-      <div className="max-w-7xl mx-auto">
+      <div className="">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-          {/* Credit Card */}
+          
           <CreditCard card={data.creditCard} />
 
-          {/* Credit Balance */}
+
           <CreditBalanceCard balance={data.creditBalance} />
 
-          {/* Invoices */}
+
           <InvoicesCard invoices={data.invoices} />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-          {/* Payment Methods - spans 2 columns */}
+         
           <div className="lg:col-span-2">
             <PaymentMethodsCard paymentMethods={data.paymentMethods} />
+           <div className="mt-">
+             <BillingInfoCard billingInfo={data.billingInfo} />
+           </div>
           </div>
 
-          {/* Transactions */}
           <TransactionsCard transactions={data.transactions} />
         </div>
 
-        {/* Billing Information - full width */}
-        <BillingInfoCard billingInfo={data.billingInfo} />
+        
       </div>
     </div>
   )

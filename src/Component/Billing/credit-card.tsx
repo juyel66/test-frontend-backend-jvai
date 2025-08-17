@@ -33,4 +33,3 @@ export function CreditCard({ card, className }: CreditCardProps) {
     </Card>
   )
 }
-

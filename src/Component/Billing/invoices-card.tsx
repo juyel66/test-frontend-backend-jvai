@@ -9,7 +9,7 @@ interface InvoicesCardProps {
 
 export function InvoicesCard({ invoices }: InvoicesCardProps) {
   return (
-    <Card className="p-6 bg-gradient-to-br from-slate-800 to-slate-900 text-white border-0">
+    <Card className="p-6 bg-gradient-to-br  from-slate-800 to-slate-900 text-white border-0">
       <div className="flex justify-between items-center mb-6">
         <h3 className="text-lg font-semibold">Invoices</h3>
         <Button size="sm" className="bg-blue-600 hover:bg-blue-700">

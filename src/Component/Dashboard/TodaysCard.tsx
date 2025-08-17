@@ -21,7 +21,7 @@ const TodaysCard = () => {
         </div>
         <img className=""  src="https://i.ibb.co.com/7tJhDX4x/Icon.png" alt="" />
       </div>
-        {/* img 1 */}
+        {/* img 2 */}
       <div
         style={{ backgroundImage: "url(/images/rec.png)" }}
         className="flex items-center justify-between  p-2 w-full rounded-xl  bg-no-repeat bg-cover "
@@ -37,7 +37,7 @@ const TodaysCard = () => {
         </div>
         <img className=""  src="https://i.ibb.co.com/7tJhDX4x/Icon.png" alt="" />
       </div>
-        {/* img 1 */}
+        {/* img 3 */}
            <div
         style={{ backgroundImage: "url(/images/rec.png)" }}
         className="flex items-center justify-between  p-2 w-full rounded-xl  bg-no-repeat bg-cover "
@@ -53,7 +53,7 @@ const TodaysCard = () => {
         </div>
         <img className=""  src="https://i.ibb.co.com/7tJhDX4x/Icon.png" alt="" />
       </div>
-        {/* img 1 */}
+        {/* img 4 */}
             <div
         style={{ backgroundImage: "url(/images/rec.png)" }}
         className="flex items-center justify-between   p-2 w-full rounded-xl  bg-no-repeat bg-cover "
