@@ -10,7 +10,7 @@ import {
 import { BarChart2, CreditCard } from "lucide-react";
 
 import CustomIcon from "@/Component/customIcons/customIcons";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom"; // NavLink import
 
 const menu_items = [
   {
@@ -20,16 +20,15 @@ const menu_items = [
   },
   {
     title: "Tables",
-    url: "tables",
+    url: "/tables",
     icon: BarChart2,
   },
   {
     title: "Billing",
-    url: "billing",
+    url: "/billing",
     icon: CreditCard,
   },
 ];
-
 
 const account_items = [
   {
@@ -49,40 +48,44 @@ const AppSidebar = () => {
     <Sidebar>
       <SidebarContent>
         <SidebarMenu>
-        
-        
-
-              <p className="mt-5 ml-10 text-white mb-5 px-2  text-[17px]">
+          <p className="mt-5 ml-10 text-white mb-5 px-2 text-[17px]">
             VISION UI FREE
           </p>
 
-           <div className="h-px bg-gradient-to-r from-transparent via-white to-transparent" />
-
+          <div className="h-px bg-gradient-to-r from-transparent via-white to-transparent" />
 
           {menu_items.map((item) => (
-            <SidebarMenuItem className="" key={item.title}>
+            <SidebarMenuItem key={item.title}>
               <SidebarMenuButton>
-                <Link to={item.url} className="flex items-center  gap-2">
+                <NavLink
+                  to={item.url}
+                  className={({ isActive }) =>
+                    `flex items-center gap-2 ${isActive ? "text-blue-500 bg-[#1A1F37] rounded-xl w-full p-2"  : "text-white"}`
+                  }
+                >
                   <item.icon />
                   <span>{item.title}</span>
-                </Link>
+                </NavLink>
               </SidebarMenuButton>
             </SidebarMenuItem>
           ))}
 
-          {/* Account Pages Header */}
-          <p className="mt-5 text-white mb-5 px-2  text-[16px]">
+          <p className="mt-5 text-white mb-5 px-2 text-[16px]">
             ACCOUNT PAGES
           </p>
 
-          {/* Account menu */}
           {account_items.map((item) => (
             <SidebarMenuItem key={item.title}>
               <SidebarMenuButton>
-                <Link to={item.url} className="flex items-center gap-2">
+                <NavLink
+                  to={item.url}
+                  className={({ isActive }) =>
+                    `flex items-center gap-2 ${isActive ? "text-blue-500 bg-[#1A1F37] rounded-xl w-full p-2" : "text-white"}`
+                  }
+                >
                   <item.icon />
                   <span>{item.title}</span>
-                </Link>
+                </NavLink>
               </SidebarMenuButton>
             </SidebarMenuItem>
           ))}
