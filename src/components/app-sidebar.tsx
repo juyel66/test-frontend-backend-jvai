@@ -28,6 +28,11 @@ const menu_items = [
     url: "/billing",
     icon: CreditCard,
   },
+  {
+    title: "RTL",
+    url: "/RTL",
+    icon: CreditCard,
+  },
 ];
 
 const account_items = [
@@ -60,7 +65,7 @@ const AppSidebar = () => {
                 <NavLink
                   to={item.url}
                   className={({ isActive }) =>
-                    `flex items-center gap-2 ${isActive ? "text-blue-500 bg-[#1A1F37] rounded-xl w-full p-2"  : "text-white"}`
+                    `flex items-center gap-2 ${isActive ? "text-white bg-[#1A1F37] rounded-xl w-full p-2"  : "text-white"}`
                   }
                 >
                   <item.icon />
@@ -80,7 +85,7 @@ const AppSidebar = () => {
                 <NavLink
                   to={item.url}
                   className={({ isActive }) =>
-                    `flex items-center gap-2 ${isActive ? "text-blue-500 bg-[#1A1F37] rounded-xl w-full p-2" : "text-white"}`
+                    `flex items-center gap-2 ${isActive ? "text-white bg-[#1A1F37] rounded-xl w-full p-2" : "text-white"}`
                   }
                 >
                   <item.icon />
