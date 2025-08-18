@@ -30,13 +30,16 @@ export function PaymentMethodsCard({ paymentMethods }: PaymentMethodsCardProps) 
           >
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-2">
-                <div
-                  className={`w-8 h-5 rounded ${
-                    method.type === "mastercard" ? "bg-red-500" : "bg-blue-500"
-                  } flex items-center justify-center text-xs font-bold text-white`}
-                >
-                  {method.type === "mastercard" ? "MC" : "VISA"}
-                </div>
+       <div
+  className={`w-8 h-5 rounded overflow-hidden flex items-center justify-center`}
+>
+  {method.type === "mastercard" ? (
+    <img src="images/card.svg" alt="MasterCard" className="w-full h-full object-contain" />
+  ) : (
+    <span className="text-xs font-bold text-white">VISA</span>
+  )}
+</div>
+
                 <span className="text-sm font-mono">{method.number}</span>
               </div>
               {index === 0 && (
