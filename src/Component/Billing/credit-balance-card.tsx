@@ -31,8 +31,10 @@ export function CreditBalanceCard({ balance }: CreditBalanceCardProps) {
       <div className="space-y-2">
         <div className="text-sm text-white/70">NEWEST</div>
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 bg-green-500/20 rounded flex items-center justify-center">
-            <div className="w-3 h-3 bg-green-500 rounded"></div>
+          <div className="w-8 h-8 bg-gray-600 rounded flex items-center justify-center">
+            <div
+            style={{ backgroundImage: 'url("/images/domain.png")' }}
+             className="w-3 h-3   rounded"></div>
           </div>
           <div className="flex-1">
             <div className="text-sm font-medium">{balance.billAndTaxes.description}</div>
