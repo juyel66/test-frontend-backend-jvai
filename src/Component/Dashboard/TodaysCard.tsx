@@ -35,7 +35,7 @@ const TodaysCard = () => {
             </p>
           </div>
         </div>
-        <img className=""  src="https://i.ibb.co.com/7tJhDX4x/Icon.png" alt="" />
+        <img className=""  src="https://i.ibb.co.com/93WXTX8s/earth-Icons.png" alt="" />
       </div>
         {/* img 3 */}
            <div
@@ -51,7 +51,7 @@ const TodaysCard = () => {
             </p>
           </div>
         </div>
-        <img className=""  src="https://i.ibb.co.com/7tJhDX4x/Icon.png" alt="" />
+        <img className=""  src="https://i.ibb.co.com/cXXgSgbQ/Book-Icons.png" alt="" />
       </div>
         {/* img 4 */}
             <div
@@ -67,7 +67,7 @@ const TodaysCard = () => {
             </p>
           </div>
         </div>
-        <img className=""  src="https://i.ibb.co.com/7tJhDX4x/Icon.png" alt="" />
+        <img className=""  src="https://i.ibb.co.com/MDcyxX6j/BuyIcons.png" alt="" />
       </div>
 
 
