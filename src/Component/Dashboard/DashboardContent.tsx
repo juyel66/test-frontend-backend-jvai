@@ -17,6 +17,12 @@ const DashboardContent = () => {
       <DashboardTables></DashboardTables>
     </div>
 
+    <div className="flex justify-end items-end gap-5 mt-10 pb-5 pr-4 text-white ">
+      <p className="cursor-pointer ">Marketplace</p>
+      <p className="cursor-pointer">Blog</p>
+      <p className="cursor-pointer">License</p>
+    </div>
+
 
 
    </div>
