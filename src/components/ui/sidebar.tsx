@@ -185,10 +185,12 @@ function Sidebar({
           data-sidebar="sidebar"
           data-slot="sidebar"
           data-mobile="true"
-          className="bg-sidebar text-sidebar-foreground w-(--sidebar-width) p-0 [&>button]:hidden"
+          className="w-(--sidebar-width) p-0 [&>button]:hidden"
           style={
             {
               "--sidebar-width": SIDEBAR_WIDTH_MOBILE,
+              background:
+                "linear-gradient(111.84deg, rgba(6, 11, 38, 0.94) 59.3%, rgba(26, 31, 55, 0) 100%)",
             } as React.CSSProperties
           }
           side={side}
@@ -197,7 +199,34 @@ function Sidebar({
             <SheetTitle>Sidebar</SheetTitle>
             <SheetDescription>Displays the mobile sidebar.</SheetDescription>
           </SheetHeader>
-          <div className="flex h-full w-full flex-col">{children}</div>
+          <div
+            data-slot="sidebar-inner"
+            className="text-white flex h-full w-full flex-col p-5"
+          >
+            {/* Main scrollable content area */}
+            <div className="flex-1 overflow-auto">{children}</div>
+
+            {/* Documentation section at the bottom */}
+            <div
+              className="mt-auto h-48 w-full rounded-xl bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: "url('/images/documentation.png')",
+              }}
+            >
+              <img
+                src="/images/icons.png"
+                alt="Documentation"
+                className=" rounded-xl object-contain pl-4 pt-4"
+              />
+              <div className=" pl-4 pt-4">
+                <p className="text-2xl">Need help?</p>
+                <p>Please check our docs</p>
+                <p className="btn mt-2 rounded-xl border-0 bg-gradient-to-tr from-[#060b28] via-[#0a0e23] to-[#0a0e23] font-semibold text-white shadow">
+                  DOCUMENTATION
+                </p>
+              </div>
+            </div>
+          </div>
         </SheetContent>
       </Sheet>
     )
@@ -224,77 +253,54 @@ function Sidebar({
             : "group-data-[collapsible=icon]:w-(--sidebar-width-icon)"
         )}
       />
-<div
-  data-slot="sidebar-container"
-  className={cn(
-    "fixed inset-y-0 z-10 hidden h-svh w-(--sidebar-width) transition-[left,right,width] duration-200 ease-linear md:flex",
-    side === "left"
-      ? "left-0 group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)]"
-      : "right-0 group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)]",
-    // Adjust the padding for floating and inset variants.
-    variant === "floating" || variant === "inset"
-      ? "p-2 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]"
-      : "group-data-[collapsible=icon]:w-(--sidebar-width-icon)",
-    className
-  )}
-  {...props}
->
-
-
-
-        {/* <div
-
+      <div
+        data-slot="sidebar-container"
+        className={cn(
+          "fixed inset-y-0 z-10 hidden h-svh w-(--sidebar-width) transition-[left,right,width] duration-200 ease-linear md:flex",
+          side === "left"
+            ? "left-0 group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)]"
+            : "right-0 group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)]",
+          // Adjust the padding for floating and inset variants.
+          variant === "floating" || variant === "inset"
+            ? "p-2 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]"
+            : "group-data-[collapsible=icon]:w-(--sidebar-width-icon)",
+          className
+        )}
+        {...props}
+      >
+        <div
+          style={{
+            background:
+              "linear-gradient(111.84deg, rgba(6, 11, 38, 0.94) 59.3%, rgba(26, 31, 55, 0) 100%)",
+          }}
           data-sidebar="sidebar"
           data-slot="sidebar-inner"
-          className=" h-[500px] border-4 border-red-600  group-data-[variant=floating]:border-sidebar-border flex  w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm"
-          style={{backgroundImage: "/images/documentation"}}
+          className="text-white relative flex w-full flex-col p-5 group-data-[variant=floating]:border group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:shadow-sm group-data-[variant=floating]:rounded-lg"
         >
-          {children}
+          {/* Main scrollable content area */}
+          <div className="flex-1 overflow-auto">{children}</div>
 
-          
-        </div> */}
-
-
-        <div
-        
-  style={{
-    background: "linear-gradient(111.84deg, rgba(6, 11, 38, 0.94) 59.3%, rgba(26, 31, 55, 0) 100%)"
-  }}
-  data-sidebar="sidebar"
-  data-slot="sidebar-inner"
-  className="text-white flex w-full p-5  flex-col   relative group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm"
->
-  {/* এখানে বাকি sidebar content */}
-  <div className="flex-1 overflow-auto">
- 
-    {children}
-     
-        
-  </div>
-
-  {/* Documentation image নিচে রাখতে */}
-<div
-  className="mt-auto w-full bg-no-repeat h-48 rounded-xl bg-cover bg-center"
-  style={{
-    backgroundImage: "url('/images/documentation.png')",
-  }}
->
-  <img src="/images/icons.png" alt="Documentation" className=" pl-4 pt-4 object-contain rounded-xl" />
-<div className=" pl-4 pt-4">
-    <p className="text-2xl">Need help?</p>
-  <p>Please check our docs</p>
-  <p className="btn border-0 shadow font-semibold mt-2 text-white   rounded-xl bg-gradient-to-tr from-[#060b28] via-[#0a0e23] to-[#0a0e23]">DOCUMENTATION</p>
-</div>
-
-</div>
-
-   
-</div>
-
-
-
-
-
+          {/* Documentation section at the bottom */}
+          <div
+            className="mt-auto h-48 w-full rounded-xl bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: "url('/images/documentation.png')",
+            }}
+          >
+            <img
+              src="/images/icons.png"
+              alt="Documentation"
+              className=" rounded-xl object-contain pl-4 pt-4"
+            />
+            <div className=" pl-4 pt-4">
+              <p className="text-2xl">Need help?</p>
+              <p>Please check our docs</p>
+              <p className="btn mt-2 rounded-xl border-0 bg-gradient-to-tr from-[#060b28] via-[#0a0e23] to-[#0a0e23] font-semibold text-white shadow">
+                DOCUMENTATION
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
@@ -392,7 +398,7 @@ function SidebarHeader({ className, ...props }: React.ComponentProps<"div">) {
 
 function SidebarFooter({ className, ...props }: React.ComponentProps<"div">) {
   return (
-    <div 
+    <div
       data-slot="sidebar-footer"
       data-sidebar="footer"
       className={cn("flex flex-col gap-2 p-2 ", className)}
@@ -540,8 +546,7 @@ const sidebarMenuButtonVariants = cva(
       size: "default",
     },
   }
-);
-
+)
 
 function SidebarMenuButton({
   asChild = false,
